@@ -1,0 +1,18 @@
+[submodule "omz"]
+	path = libs/omz
+	url = https://github.com/ohmyzsh/ohmyzsh
+[submodule "plugins/zsh-autosuggestions"]
+	path = custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "plugins/zsh-completions"]
+	path = custom/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions
+[submodule "plugins/zsh-syntax-highlighting"]
+	path = custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "pure"]
+	path = libs/pure
+	url = https://github.com/sindresorhus/pure.git
+[submodule "autojump"]
+	path = libs/autojump
+	url = https://github.com/wting/autojump.git
