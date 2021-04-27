@@ -7,5 +7,6 @@ autojump_path=$env_path/autojump
 pure_path=$env_path/libs/pure
 custom_path=$env_path/custom
 dirc_path=$env_path/scripts/dircolors
+fzf_path=$env_path/libs/fzf
 fzfcd_path=$env_path/libs/zsh-fzf-cd
 

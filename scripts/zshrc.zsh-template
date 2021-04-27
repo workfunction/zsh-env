@@ -2,6 +2,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$omz_path
 export ZSH_CUSTOM=$custom_path
+export FZF_BASE=$fzf_path
 
 ZSH_THEME=""
 
