@@ -1,0 +1,10 @@
+###### auto generated .zshrc by ###PWD### ######
+
+# Configs
+env_path=###PWD###
+omz_path=$env_path/libs/omz
+autojump_path=$env_path/autojump
+pure_path=$env_path/libs/pure
+custom_path=$env_path/custom
+dirc_path=$env_path/scripts/dircolors
+

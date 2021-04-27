@@ -1,0 +1,21 @@
+
+# Path to your oh-my-zsh installation.
+export ZSH=$omz_path
+export ZSH_CUSTOM=$custom_path
+
+ZSH_THEME=""
+
+plugins=(git ruby zsh-syntax-highlighting zsh-completions zsh-autosuggestions)
+
+source $ZSH/oh-my-zsh.sh
+
+# autojump
+[[ -s $autojump_path/etc/profile.d/autojump.sh ]] && source $autojump_path/etc/profile.d/autojump.sh
+
+autoload -U compinit && compinit -u
+
+# Pure
+fpath+=$pure_path
+autoload -U promptinit; promptinit
+PURE_PROMPT_SYMBOL=" » "
+prompt pure
