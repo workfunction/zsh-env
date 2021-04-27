@@ -4,14 +4,6 @@ current_path=$(realpath .)
 echo "Updating submodules..."
 git submodule foreach git pull --ff-only > /dev/null
 
-# install autojump
-mkdir -p autojump
-autojump_path=$current_path/autojump
-
-cd libs/autojump
-./install.py -d $autojump_path > /dev/null
-cd -
-
 # backup old zshrc
 mkdir -p backups
 backup_path=$current_path/backups
@@ -30,5 +22,18 @@ echo "Old .zshrc backup to $backup..."
 echo "Creating new zshrc file"
 sed "s|###PWD###|$current_path|g" scripts/configs.zsh-template > $HOME/.zshrc
 cat scripts/zshrc.zsh-template >> $HOME/.zshrc
+
+# install autojump
+echo "Installing autojump"
+mkdir -p autojump
+autojump_path=$current_path/autojump
+
+cd libs/autojump
+./install.py -d $autojump_path > /dev/null
+cd -
+
+# install fzf
+echo "Installing fzf"
+libs/fzf/install --all > /dev/null
 
 echo "Done!"

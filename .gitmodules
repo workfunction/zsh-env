@@ -16,3 +16,9 @@
 [submodule "autojump"]
 	path = libs/autojump
 	url = https://github.com/wting/autojump.git
+[submodule "libs/fzf"]
+	path = libs/fzf
+	url = https://github.com/junegunn/fzf.git
+[submodule "libs/zsh-fzf-cd"]
+	path = libs/zsh-fzf-cd
+	url = https://github.com/changyuheng/zsh-interactive-cd.git

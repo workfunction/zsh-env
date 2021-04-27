@@ -5,7 +5,7 @@ export ZSH_CUSTOM=$custom_path
 
 ZSH_THEME=""
 
-plugins=(git ruby zsh-syntax-highlighting zsh-completions zsh-autosuggestions)
+plugins=(git ruby fzf zsh-syntax-highlighting zsh-completions zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -19,3 +19,7 @@ fpath+=$pure_path
 autoload -U promptinit; promptinit
 PURE_PROMPT_SYMBOL=" » "
 prompt pure
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source $fzfcd_path/zsh-interactive-cd.plugin.zsh
