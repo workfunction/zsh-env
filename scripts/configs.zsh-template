@@ -1,4 +1,4 @@
-###### auto generated .zshrc by ###PWD### ######
+######## auto generated configs by ###PWD### ########
 
 # Configs
 env_path=###PWD###
@@ -10,3 +10,30 @@ dirc_path=$env_path/scripts/dircolors
 fzf_path=$env_path/libs/fzf
 fzfcd_path=$env_path/libs/zsh-fzf-cd
 
+# Path to the installations.
+export ZSH=$omz_path
+export ZSH_CUSTOM=$custom_path
+export FZF_BASE=$fzf_path
+
+# dircolor
+eval $(dircolors -b $dirc_path)
+
+# oh-my-zsh
+ZSH_THEME=""
+plugins=(git ruby fzf zsh-syntax-highlighting zsh-completions zsh-autosuggestions)
+source $ZSH/oh-my-zsh.sh
+
+# autojump
+[[ -s $autojump_path/etc/profile.d/autojump.sh ]] && source $autojump_path/etc/profile.d/autojump.sh
+
+autoload -U compinit && compinit -u
+
+# Pure
+fpath+=$pure_path
+autoload -U promptinit; promptinit
+PURE_PROMPT_SYMBOL=" » "
+prompt pure
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source $fzfcd_path/zsh-interactive-cd.plugin.zsh
