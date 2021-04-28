@@ -1,3 +1,5 @@
+#! /bin/env zsh
+
 update_submodules() {
     echo "Updating submodules..."
     git submodule foreach 'git checkout master || git checkout main' > /dev/null 2>&1
@@ -36,7 +38,7 @@ backup_zshrc() {
 
 install_zshrc() {
     echo "Creating new zshrc file"
-    sed "s|###PWD###|$PWD|g" scripts/configs.zsh-template > $HOME/.zsh_configs
+    sed "s|###PWD###|$PWD|g" scripts/configs.zsh-template > $HOME/.zshenv_configs
 
     user_conf="$(sed -e '1,/# Put your custom scripts below/d' $HOME/.zshrc)"
     sed "s|###PWD###|$PWD|g" scripts/zshrc.zsh-template > $HOME/.zshrc
