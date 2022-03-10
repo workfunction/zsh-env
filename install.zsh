@@ -2,8 +2,8 @@
 
 update_submodules() {
     echo "Updating submodules..."
-    git submodule foreach 'git checkout master || git checkout main' > /dev/null 2>&1
-    git submodule foreach git pull origin --ff-only > /dev/null 2>&1
+    git submodule foreach 'git checkout master || git checkout main' #> /dev/null 2>&1
+    git submodule foreach git pull origin --ff-only #> /dev/null 2>&1
 }
 
 install_submodules() {
