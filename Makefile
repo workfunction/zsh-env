@@ -1,0 +1,27 @@
+SUBS:=$(dir $(wildcard libs/*/))
+
+.PHONY: all $(SUBS) install_jump install_fzf zshrc
+
+all: $(SUBS) install_jump install_fzf zshrc
+
+$(SUBS):
+	@echo "[Updating $@]"
+	-@cd $@ && git checkout master > /dev/null 2>&1 || git checkout main > /dev/null 2>&1
+	-@cd $@ && git pull origin --ff-only
+
+install_jump: libs/autojump/
+	@echo "[Installing autojump]"
+	@mkdir -p autojump
+
+	@cd libs/autojump && ./install.py -d $(PWD)/autojump > /dev/null
+
+install_fzf: libs/fzf/
+	@echo "[Installing fzf]"
+	@libs/fzf/install --all --no-update-rc > /dev/null
+
+zshrc:
+	@echo "[Installing zshrc]"
+	@./install.zsh
+	
+
+

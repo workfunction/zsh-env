@@ -1,26 +1,3 @@
-#!/usr/bin/env zsh
-
-update_submodules() {
-    echo "Updating submodules..."
-    git submodule foreach 'git checkout master || git checkout main' #> /dev/null 2>&1
-    git submodule foreach git pull origin --ff-only #> /dev/null 2>&1
-}
-
-install_submodules() {
-    # install autojump
-    echo "Installing autojump"
-    mkdir -p autojump
-    autojump_path=$PWD/autojump
-
-    cd libs/autojump
-    ./install.py -d $autojump_path > /dev/null
-    cd -
-
-    # install fzf
-    echo "Installing fzf"
-    libs/fzf/install --all --no-update-rc > /dev/null
-}
-
 backup_zshrc() {
     mkdir -p backups
     backup_path=$PWD/backups
@@ -45,8 +22,6 @@ install_zshrc() {
     echo "$user_conf" >> $HOME/.zshrc
 }
 
-update_submodules;
-install_submodules;
 backup_zshrc;
 install_zshrc;
 
