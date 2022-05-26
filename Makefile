@@ -2,8 +2,7 @@ SUBS:=$(dir $(wildcard libs/*/))
 
 .PHONY: all $(SUBS) install_jump install_fzf zshrc
 
-all: $(SUBS) install_jump install_fzf zshrc
-
+all: $(SUBS) install_jump install_fzf zshrc tmux vim
 $(SUBS):
 	@echo "[Updating $@]"
 	-@cd $@ && git checkout master > /dev/null 2>&1 || git checkout main > /dev/null 2>&1
@@ -23,5 +22,7 @@ zshrc:
 	@echo "[Installing zshrc]"
 	@./install.zsh
 	
-
+tmux:
+	@echo "[Installing tmux config]"
+	@ln -s -f `pwd`/tmux.conf ~/.tmux.conf
 
