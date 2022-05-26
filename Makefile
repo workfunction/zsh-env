@@ -26,3 +26,7 @@ tmux:
 	@echo "[Installing tmux config]"
 	@ln -s -f `pwd`/tmux.conf ~/.tmux.conf
 
+vim:
+	@echo "[Installing vim config]"
+	@ln -s -f `pwd`/vimrc ~/.vimrc
+
