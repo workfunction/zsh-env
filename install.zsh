@@ -2,7 +2,7 @@ backup_zshrc() {
     mkdir -p backups
     backup_path=$PWD/backups
     latest=$backup_path/$(ls -t1 $backup_path |  head -n 1)
-    backup=$backup_path/zshrc.$(mktemp -u | grep -oP "\.\K.*")
+    backup=$backup_path/zshrc.$(mktemp -u | grep -o "\.\K.*")
 
     # check if no previous backups
     [ ! -f $latest ] && touch $backup && latest=$backup

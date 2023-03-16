@@ -22,3 +22,6 @@
 [submodule "libs/zsh-fzf-cd"]
 	path = libs/zsh-fzf-cd
 	url = https://github.com/changyuheng/zsh-interactive-cd.git
+[submodule "custom/plugins/zsh-aliases-exa"]
+	path = custom/plugins/zsh-aliases-exa
+	url = https://github.com/DarrinTisdale/zsh-aliases-exa.git

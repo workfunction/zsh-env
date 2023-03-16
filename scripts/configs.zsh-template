@@ -16,11 +16,18 @@ export ZSH_CUSTOM=$custom_path
 export FZF_BASE=$fzf_path
 
 # dircolor
-eval $(dircolors -b $dirc_path)
+if command -v dircolors > /dev/null 2>&1; then
+    eval $(dircolors -b $dirc_path)
+fi
 
 # oh-my-zsh
 ZSH_THEME=""
-plugins=(git ruby fzf zsh-syntax-highlighting zsh-completions zsh-autosuggestions)
+if command -v exa > /dev/null 2>&1; then
+    plugins=(git ruby fzf zsh-syntax-highlighting zsh-completions zsh-autosuggestions zsh-aliases-exa)
+else
+    plugins=(git ruby fzf zsh-syntax-highlighting zsh-completions zsh-autosuggestions)
+fi
+
 source $ZSH/oh-my-zsh.sh
 
 # autojump

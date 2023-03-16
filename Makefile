@@ -1,8 +1,12 @@
-SUBS:=$(dir $(wildcard libs/*/))
+SUBS := $(dir $(wildcard libs/*/))
+SUBS += $(dir $(wildcard custom/plugins/*/))
 
-.PHONY: all $(SUBS) install_jump install_fzf zshrc
+.PHONY: all update $(SUBS) zshrc
 
-all: $(SUBS) install_jump install_fzf zshrc tmux vim
+all: update install_jump install_fzf zshrc tmux vim
+
+update: $(SUBS)
+
 $(SUBS):
 	@echo "[Updating $@]"
 	-@cd $@ && git checkout master > /dev/null 2>&1 || git checkout main > /dev/null 2>&1
