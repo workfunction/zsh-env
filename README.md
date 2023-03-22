@@ -9,10 +9,15 @@ Make sure zsh is installed.
 
 ## Usage
 
-Just run the `install.zsh` script
+Clone this repo with all submodules
+```bash=
+git clone --recurse-submodules -j8 https://github.com/workfunction/zsh-env.git
+```
+
+Make it
 
 ```bash=
-./install.zsh
+make -j
 ```
 
 ## Plugins
