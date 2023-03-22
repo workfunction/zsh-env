@@ -31,6 +31,7 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 # autojump
+PATH=$autojump_path/bin:$PATH
 [[ -s $autojump_path/etc/profile.d/autojump.sh ]] && source $autojump_path/etc/profile.d/autojump.sh
 
 autoload -U compinit && compinit -u
