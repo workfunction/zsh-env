@@ -25,3 +25,6 @@
 [submodule "custom/plugins/zsh-aliases-exa"]
 	path = custom/plugins/zsh-aliases-exa
 	url = https://github.com/DarrinTisdale/zsh-aliases-exa.git
+[submodule "custom/plugins/zsh-autocomplete"]
+	path = custom/plugins/zsh-autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete.git

@@ -3,12 +3,10 @@
 # Configs
 env_path=###PWD###
 omz_path=$env_path/libs/omz
-autojump_path=$env_path/autojump
-pure_path=$env_path/libs/pure
 custom_path=$env_path/custom
 dirc_path=$env_path/scripts/dircolors
 fzf_path=$env_path/libs/fzf
-fzfcd_path=$env_path/libs/zsh-fzf-cd
+dotlocal_path=$HOME/.local
 
 # Path to the installations.
 export ZSH=$omz_path
@@ -22,26 +20,21 @@ fi
 
 # oh-my-zsh
 ZSH_THEME=""
-if command -v exa > /dev/null 2>&1; then
-    plugins=(git ruby fzf zsh-syntax-highlighting zsh-completions zsh-autosuggestions zsh-aliases-exa)
+if command -v eza > /dev/null 2>&1; then
+    plugins=(git ruby zsh-syntax-highlighting zsh-autocomplete zsh-autosuggestions zsh-eza)
 else
-    plugins=(git ruby fzf zsh-syntax-highlighting zsh-completions zsh-autosuggestions)
+    plugins=(git ruby zsh-syntax-highlighting zsh-autocomplete zsh-autosuggestions)
 fi
 
 source $ZSH/oh-my-zsh.sh
 
-# autojump
-PATH=$autojump_path/bin:$PATH
-[[ -s $autojump_path/etc/profile.d/autojump.sh ]] && source $autojump_path/etc/profile.d/autojump.sh
-
-autoload -U compinit && compinit -u
-
-# Pure
-fpath+=$pure_path
-autoload -U promptinit; promptinit
-PURE_PROMPT_SYMBOL=" » "
-prompt pure
-
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source $fzfcd_path/zsh-interactive-cd.plugin.zsh
+
+# Zoxide
+PATH=$dotlocal_path/bin:$PATH
+eval "$(zoxide init --cmd cd zsh)"
+
+# Starship
+PATH=$dotlocal_path/bin:$PATH
+eval "$(starship init zsh)"
