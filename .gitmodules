@@ -4,27 +4,15 @@
 [submodule "plugins/zsh-autosuggestions"]
 	path = custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule "plugins/zsh-completions"]
-	path = custom/plugins/zsh-completions
-	url = https://github.com/zsh-users/zsh-completions
 [submodule "plugins/zsh-syntax-highlighting"]
 	path = custom/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "pure"]
-	path = libs/pure
-	url = https://github.com/sindresorhus/pure.git
-[submodule "autojump"]
-	path = libs/autojump
-	url = https://github.com/wting/autojump.git
 [submodule "libs/fzf"]
 	path = libs/fzf
 	url = https://github.com/junegunn/fzf.git
-[submodule "libs/zsh-fzf-cd"]
-	path = libs/zsh-fzf-cd
-	url = https://github.com/changyuheng/zsh-interactive-cd.git
-[submodule "custom/plugins/zsh-aliases-exa"]
-	path = custom/plugins/zsh-aliases-exa
-	url = https://github.com/DarrinTisdale/zsh-aliases-exa.git
 [submodule "custom/plugins/zsh-autocomplete"]
 	path = custom/plugins/zsh-autocomplete
 	url = https://github.com/marlonrichert/zsh-autocomplete.git
+[submodule "custom/plugins/zsh-eza"]
+	path = custom/plugins/zsh-eza
+	url = https://github.com/z-shell/zsh-eza.git
